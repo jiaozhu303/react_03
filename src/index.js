@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import Profile from './components/Profile';
 import './index';
 
-class App extends Component {
+class App extends React.Component {
     render() {
         const data = {
                     name: 'zhaoDJ5',

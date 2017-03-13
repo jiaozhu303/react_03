@@ -55,8 +55,7 @@ var config = {
             exclude: /node_modules/
         }, {
             test: /\.css/,
-            loader: extractTextWebpackPlugin.extract({fallback: 'style-loader', use: ['css-loader']}),
-            include: path.resolve(__dirname, 'src')
+            loader: extractTextWebpackPlugin.extract([ 'css-loader', 'postcss-loader' ])
         }],
     },
     devServer: {
