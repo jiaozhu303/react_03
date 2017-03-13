@@ -1,9 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Profile from './components/Profile';
+import Rrange from './components/Range';
 import './index';
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.props = props;
+        this.state = {'sta': 1};
+        this.update = this.update.bind(this);
+    }
+
+    update() {
+        this.setState({'sta': this.state.sta + 1});
+    }
+
     render() {
         const data = {
                     name: 'zhaoDJ5',
@@ -20,7 +32,9 @@ class App extends React.Component {
         return (
                 <div className="container" style={styles}>
                     <Profile name={data.name} id={data.id} url={data.url} desc={data.desc}/>
-                    <span>{tip}</span>
+                    <Rrange ref="one" update={this.update}/>
+                    <Rrange ref="two" update={this.update}/>
+                    <span>{this.state.sta}</span>
                 </div>
         );
     }
