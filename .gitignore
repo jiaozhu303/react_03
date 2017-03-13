@@ -35,3 +35,7 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+/react_03.iml
+.idea/
+react_03.iml
+lib/
