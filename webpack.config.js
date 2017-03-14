@@ -19,7 +19,7 @@ var webpackPlugins = [
     new openBrowserPlugin({
         url: 'http://localhost:8080'
     }),
-    new webpack.BannerPlugin('作者：zhaodj\n日期：2017-03-06'),
+    new webpack.BannerPlugin('作者：zhaodj\n日期：'+ new Date().toLocaleString()),
     new extractTextWebpackPlugin("styles.css")
 ];
 
@@ -41,7 +41,6 @@ var config = {
     },
     devtool: 'cheap-source-map',
     resolve: {
-        // root: path.join(__dirname, "./src"),
         extensions: ['.js', '.css', '.json', '.less']
     },
     module: {
@@ -50,10 +49,14 @@ var config = {
             use: 'babel-loader',
             exclude: /node_modules/
         }, {
-            test: /\.css/,
+            test: /\.js$/,
+            use: 'eslint-loader',
+            exclude: /node_modules/
+        }, {
+            test: /\.less$/,
             use: extractTextWebpackPlugin.extract({
                 fallback: 'style-loader',
-                use: 'css-loader'
+                use: ['css-loader', 'less-loader']
             }),
             exclude: /node_modules/
         }],

@@ -78,7 +78,7 @@ module.exports = {
         ],
         "line-comment-position": "error",
         "linebreak-style": [
-            "error",
+            "off",
             "unix"
         ],
         "lines-around-comment": "error",
