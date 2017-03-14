@@ -9,12 +9,10 @@ class Rrange extends React.Component {
     }
 
     render() {
-        const {update} = this.props;
+        const {updateNum} = this.props;
 
         return (
-            <div>
-                <button onClick={update}>点击RANGE</button>
-            </div>
+                <input onChange={updateNum} />
         );
     }
 }
