@@ -6,6 +6,7 @@ var extractTextWebpackPlugin = require('extract-text-webpack-plugin');
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
 var libraryName = "sparrow";
+var port = 7070;
 
 
 var args = require('yargs').argv;
@@ -17,7 +18,7 @@ var webpackPlugins = [
         template: path.resolve(__dirname, "./src/index.html")
     }),
     new openBrowserPlugin({
-        url: 'http://localhost:8080'
+        url: 'http://localhost:'+ port
     }),
     new webpack.BannerPlugin('作者：zhaodj\n日期：'+ new Date().toLocaleString()),
     new extractTextWebpackPlugin("styles.css")
@@ -64,7 +65,7 @@ var config = {
     devServer: {
         contentBase: 'lib',
         inline: true,
-        port: 8080,
+        port: port,
         stats: {
             colors: true
         }
