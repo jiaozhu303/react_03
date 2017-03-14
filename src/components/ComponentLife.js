@@ -17,11 +17,11 @@ class ComponentLife extends React.Component {
         console.log("组件挂在完成");
     }
 
-    componentWillUnmount(prevProps, prevState){
+    componentWillUnmount(){
         console.log("组件将要卸载");
     }
 
-    componentWillReceiveProps(){
+    componentWillReceiveProps(nextProps){
         console.log("有属性props更新");
     }
 
@@ -30,11 +30,11 @@ class ComponentLife extends React.Component {
         return true;
     }
 
-    componentWillUpdate(){
+    componentWillUpdate(nextProps, nextState){
         console.log("组件将要更新");
     }
 
-    componentDidUpdate(){
+    componentDidUpdate(prevProps, prevState){
         console.log("组件更新完成");
     }
 
