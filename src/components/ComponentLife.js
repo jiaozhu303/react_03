@@ -17,7 +17,7 @@ class ComponentLife extends React.Component {
         console.log("组件挂在完成");
     }
 
-    componentWillUnmount(){
+    componentWillUnmount(prevProps, prevState){
         console.log("组件将要卸载");
     }
 
