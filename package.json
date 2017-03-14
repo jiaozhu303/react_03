@@ -8,7 +8,7 @@
     "build": "webpack --progress --colors --env=development",
     "build_prod": "webpack --progress --colors --env=prod",
     "build_w": "webpack --config webpack.config.js --progress --colors --watch",
-    "dev": "webpack-dev-server --progress",
+    "dev": "webpack-dev-server --progress --hot",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },

@@ -45,17 +45,17 @@ var config = {
         extensions: ['.js', '.css', '.json', '.less']
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.js$/,
-            loader: 'babel-loader',
-            exclude: /node_modules/
-        }, {
-            test: /\.js$/,
-            loader: 'eslint-loader',
+            use: 'babel-loader',
             exclude: /node_modules/
         }, {
             test: /\.css/,
-            loader: extractTextWebpackPlugin.extract([ 'css-loader', 'postcss-loader' ])
+            use: extractTextWebpackPlugin.extract({
+                fallback: 'style-loader',
+                use: 'css-loader'
+            }),
+            exclude: /node_modules/
         }],
     },
     devServer: {

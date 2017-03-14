@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Profile from './components/Profile';
 import Rrange from './components/Range';
-import './index';
+import './indexStyle';
 
 class App extends React.Component {
     constructor(props) {
